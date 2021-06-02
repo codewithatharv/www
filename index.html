@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../views/index.js"></script>
+    <!-- <link rel="stylesheet" media="screen and (max-width:500px)" href="../views/phone.css">
+    <link rel="stylesheet" media="screen and (max-width:275px)" href="../views/phone-s.css">
+    <link rel="stylesheet" media="screen and (max-width:779px)" href="../views/phone-sa.css"> -->
+    <title>CodeWithAtharv</title>
+    <style>
+        @media only screen and (max-width:500px) {
+            body {
+                font-size: 9px;
+            }
+            .navbar {
+                width: 90%;
+            }
+            .container a {
+                font-size: 10px;
+            }
+            .p2 {
+                font-size: 9px;
+            }
+            #h3main {
+                font-size: 8px;
+            }
+            #follow li {
+                margin: 7px;
+                background-color: rgb(121, 101, 101);
+                border-radius: 20px;
+                padding: 0px 3px
+            }
+            #h4 {
+                font-size: 5px;
+            }
+            .h2 {
+                font-size: 7px;
+            }
+        }
+        
+        @media only screen and (max-width:500px) {
+            #h3main {
+                display: none;
+            }
+            .h2 h3 {
+                display: none;
+            }
+        }
+        
+        @media only screen and (max-width:700px) {
+            #h3main {
+                font-size: 10px;
+            }
+        }
+        
+        @media only screen and (max-width:700px) {
+            .ol h2 {
+                display: none;
+            }
+        }
+        
+        * {
+            margin: 0%;
+            padding: 0%;
+        }
+        
+        .div2 h3 {
+            display: none;
+        }
+        
+        .p2 {
+            margin: 1%;
+            font-family: cursive;
+            font-weight: lighter;
+            font-size: 0.9rem;
+        }
+        
+        .p4 {
+            margin: 1%;
+            background-color: #eee2ee;
+            font-family: cursive;
+            font-weight: lighter;
+            font-size: 0.9rem;
+        }
+        
+        .h3 {
+            color: rgb(238, 130, 130);
+            font-size: 1.4rem;
+        }
+        
+        .h2 {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            background-color: rgb(238, 215, 182);
+            font-weight: bolder;
+            opacity: 0.7;
+            font-size: 17px;
+            font-family: sans-serif;
+            padding: 1%;
+            color: rgb(59, 50, 99);
+        }
+        
+        .container {
+            height: 100vh;
+            background: url("../views/bg2.jpg") no-repeat center center/cover;
+            z-index: -1;
+        }
+        
+        .navbar ol {
+            display: flex;
+            float: right;
+        }
+        
+        .navbar ol li {
+            margin-top: 3px;
+            list-style: none;
+            margin-right: 6px;
+        }
+        
+        .navbar ol a {
+            text-decoration: none;
+            color: rgb(0, 0, 0);
+            background-color: rgb(253, 255, 240);
+            opacity: 0.9;
+        }
+        
+        .navbar ol a:hover {
+            background-color: cornsilk;
+            opacity: 0.6;
+            border: 1px solid rgb(128, 16, 202);
+        }
+        
+        .navbar ol a:hover {
+            transition: 0.5s;
+            border: 1px solid rgb(128, 16, 202);
+        }
+        
+        #h3main {
+            text-align: center;
+            justify-content: center;
+            background-color: rgb(207, 178, 178);
+            opacity: 0.4;
+            border-radius: 25px;
+            color: rgb(39, 19, 35);
+            font-weight: lighter;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            margin-top: 50px;
+        }
+        
+        .home {
+            background-color: cornsilk;
+            opacity: 0.6;
+            border: 1px solid rgb(128, 16, 202);
+        }
+        
+        #link {
+            display: block;
+            justify-content: center;
+            text-align: center;
+        }
+        
+        #link li {
+            list-style: none;
+        }
+        
+        #link a {
+            text-decoration: none;
+            color: rgb(88, 87, 73);
+            border-radius: 25px;
+            background-color: rgb(253, 224, 224);
+        }
+        
+        #link a:hover {
+            transition: 0.5s;
+            border-bottom: 1px solid rgb(122, 120, 118);
+            background-color: rgb(219, 184, 150);
+            border-radius: 25px;
+        }
+        
+        #follow {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        #follow li {
+            list-style: none;
+            margin: 30px;
+        }
+        
+        #follow li {
+            color: rgb(255, 254, 248);
+            opacity: 0.5;
+        }
+        
+        #follow li:hover {
+            background-color: rgb(211, 211, 211);
+            color: rgb(145, 78, 172);
+            padding: 0px 2px;
+            border-radius: 20px;
+        }
+        
+        #follow li {
+            margin: 7px;
+            background-color: rgb(65, 59, 59);
+            border-radius: 20px;
+            margin-bottom: 16px;
+            padding: 0px 7px
+        }
+        
+        #h3main {
+            width: 0ch;
+            color: rgb(47, 27, 65);
+            overflow: hidden;
+            white-space: nowrap;
+            animation: text 4s steps(26) infinite alternate;
+        }
+        
+        @keyframes text {
+            0% {
+                width: 0ch;
+            }
+            25% {
+                width: 7ch;
+            }
+            50% {
+                width: 14ch;
+            }
+            75% {
+                width: 20ch;
+            }
+            100% {
+                width: 26ch;
+            }
+        }
+        
+        .div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .container ol {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .container ol li {
+            list-style: none
+        }
+        
+        .container ol a {
+            color: rgb(102, 63, 102);
+            text-decoration: dimgray;
+        }
+        
+        .content ol {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .content h2 {
+            background-color: rgb(226, 213, 172);
+            opacity: 0.6;
+            color: rgb(58, 72, 92);
+        }
+        
+        .content li a {
+            color: rgb(150, 150, 106);
+        }
+        
+        .p1 {
+            background-color: rgb(152, 212, 192);
+            opacity: 0.6;
+            color: rgb(39, 54, 46);
+        }
+        
+        .h3 {
+            background-color: rgb(238, 228, 212);
+            color: rgb(31, 31, 54);
+            opacity: 0.7;
+        }
+        
+        .p2 {
+            background-color: oldlace;
+            color: rgb(107, 21, 104);
+            opacity: 0.7;
+        }
+        
+        img {
+            width: 50%;
+            height: 30%;
+        }
+        
+        #dow {
+            background-color: rgb(238, 231, 218);
+        }
+        
+        #link {
+            background-color: rgb(238, 231, 218);
+        }
+        
+        #follow {
+            background-color: rgb(238, 231, 218);
+        }
+        
+        .divcontact {
+            background-color: rgb(238, 231, 218);
+        }
+        
+        #dov li {
+            list-style: none;
+        }
+        
+        #dow ol {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        #dow a {
+            color: rgb(57, 87, 87);
+            opacity: 0.6;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="navbar">
+            <ol>
+                <li><a class="a home" href="#">Home</a></li>
+                <li><a class="a" href="#content">Content</a></li>
+                <li><a class="a" href="#downloadlinks">Download links</a></li>
+
+                <li><a class="a" href="#contact">Contact Us</a></li>
+            </ol>
+        </div>
+        <div class="div">
+            <h1 id="h3main">Welcome To CodeWithAtharv :)</h1>
+        </div>
+
+        <div class="h2">
+            <h3>This is the content , we have for you</h3>
+        </div>
+
+        <hr class="hr">
+        <div id="content">
+            <div class="content">
+                <ol class="ol">
+                    <h2>Programming stuff&nbsp;</h2>
+                    <li class="li"><a href="#python" class="a">Python</a></li>
+                    <h2>Web developpment</h2>
+
+                    <li class="li"><a href="#js" class="a">Javascript</a></li>
+                    <li class="li"><a href="#html" class="a">HTML</a></li>
+                    <li class="li"><a href="#css" class="a">CSS</a></li>
+                    <h2>Game development</h2>
+                    <li class="li"><a href="#pygame" class="a">Pygame</a></li>
+                </ol>
+            </div>
+        </div>
+        <div id="python">
+            <h1 class="h2">Python</h1>
+            <hr>
+            <p class="p1">Python is an easy to learn, powerful programming language. has efficient high-level data structures and a simple but effective approach to object-oriented programming. Python’s elegant syntax and dynamic typing, together with its interpreted
+                nature, make it an ideal language for scripting and rapid application development in many areas on most platforms</p>
+            <h3 class="h3">Getting started</h3>
+            <p class="p2">we can use python interpreter as a calculator,for this we have to type python in the command prompt and can do mathmatical operations for example --> </p>
+            <img src="../views/calculator.jpg" alt="hello">
+            <h3 class="h3">Data types</h3>
+            <p class="p2">
+                There are different types of data types in python :<br> int --> integer value. <br> float --> desimal value. <br> boolean --> yes or no value. <br> double --> desimal value.<br> char --> character value. <br> string --> string value. <br></p>
+            <h3 class="h3">Comments</h3>
+            <p class="p2">
+                you can make single line comment by using ' # ' in front of the line. <br> you can make multi line comment by using " ''' " in front of the line and at end.
+            </p>
+            <h3 class="h3">Operators</h3>
+            <p class="p2">
+                and --> act as and <br> or --> act as or <br> + --> addition <br> - --> substraction <br> * --> multiply <br> / --> divide <br> = --> equals to <br> += --> increasement rapidly
+            </p>
+            <h3 class="h3">For Loops</h3>
+            <p class="p2">Now we’re ready for some more involved programming constructions. The basic technique for writing a loop is illustrated by the following example, which prints out the integers from 0 through 9: <br>
+                <br>
+            </p>
+            <img src="../views/for.jpg" alt="hello">
+            <h3 class="h3">While Loops</h3>
+            <img src="../views/while.jpg" alt="hello">
+            <h3 class="h3">F string</h3>
+            <p class="p2">The syntax is : <br> f" the content {variable is written} is written" <br>
+                <br> Some string functions are-->
+                <br> &nbsp;&nbsp;&nbsp; endswith() <br> &nbsp;&nbsp;&nbsp; upper() <br> &nbsp;&nbsp;&nbsp; capitalize() <br>
+            </p>
+            <h3 class="h3">List</h3>
+            <p class="p2">
+                &nbsp;&nbsp;&nbsp;syntax--> <br> &nbsp;&nbsp;&nbsp;listname = ["values" , "values" , "values"]
+            </p>
+            <h3 class="h3">Dictionaries</h3>
+            <p class="p2">
+                &nbsp;&nbsp;&nbsp;syntax--> <br> &nbsp;&nbsp;&nbsp; dictionary name = {"Key":"value" , "Key":"value"}
+            </p>
+            <h3 class="h3">Sets</h3>
+            <p class="p2">
+                &nbsp;&nbsp;&nbsp;syntax--> <br> &nbsp;&nbsp;&nbsp; set name = (values)
+            </p>
+            <h3 class="h3">Functions</h3>
+            <p class="p2">This is how you can make functions</p>
+            <img src="../views/function.jpg" alt="function making">
+            <h3 class="h3">Exception</h3>
+            <p class="p2">&nbsp;&nbsp;&nbsp;&nbsp;syntax--> <br> &nbsp;&nbsp;&nbsp;&nbsp;try: <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("hey") <br> &nbsp;&nbsp;&nbsp;&nbsp;except Exception as e: <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(e)
+            </p>
+            <h3 class="h3">File IO</h3>
+            <p class="p2">"r" --> reading <br>"w" --> writting <br>"x" --> creating file <br>"a" --> adding content to file <br>"t" --> text mode <br>"b" --> binary mode <br></p>
+            <p class="p2"> <br> <br> To open file --> open() <br> &nbsp;&nbsp;&nbsp; f = open("filename.txt") <br> &nbsp;&nbsp;&nbsp; c = f.read() <br> &nbsp;&nbsp;&nbsp;print(f) <br> &nbsp;&nbsp;&nbsp;f.close() <br> <br> To read a line --> <br> &nbsp;&nbsp;&nbsp; f
+                = open("filename.txt" , "rt") <br> &nbsp;&nbsp;&nbsp;print(f.readline()) <br> &nbsp;&nbsp;&nbsp;f.close()
+            </p>
+            <p class="p2">To write in a file <br> <br> &nbsp;&nbsp;&nbsp;&nbsp;f= open("filename" , "w") <br> &nbsp;&nbsp;&nbsp;&nbsp; f.write("the text to write") <br> &nbsp;&nbsp;&nbsp;&nbsp;f.close() <br> <br> <br> it create a file and add text to it , if you want
+                to add text in existing file then use "a" mode in place of "w" and name that file in which you want to add text.
+                <h1 style="color: blueviolet;">Some exercises :</h1>
+                <img src="../views/time.jpg" alt="time --> 10:23:234 "> <br>
+                <h1 style="color: blueviolet;">To print random number :</h1>
+                <img src="../views/random.jpg" alt="404 error ">
+                <h3 class="h3">Lambda</h3>
+                <p class="p2"> this is the way to write function in one line --> <br> &nbsp;&nbsp;&nbsp;&nbsp; minus = lambda x,y : x-y <br> &nbsp;&nbsp;&nbsp;&nbsp; print(minus)</p>
+                <h3 class="h3">Filter and Reduce functions</h3>
+                <p class="p2"> filter function --> <br> &nbsp;&nbsp;&nbsp;&nbsp;l=[1,2,3,4,5,6] <br> &nbsp;&nbsp;&nbsp;&nbsp;def greater(num): <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return num>5 <br> a= list(filter(greater , l)) <br> print(a) <br>
+                    <br> it will return 6 <br>
+                    <br> Reduce function --> <br> &nbsp;&nbsp;&nbsp;&nbsp;from functools import reduce <br> &nbsp;&nbsp;&nbsp;&nbsp;list = [1,,3,4,5,6] <br> &nbsp;&nbsp;&nbsp;&nbsp;num = reduce(lambda x,y : x+y , list) <br> &nbsp;&nbsp;&nbsp;&nbsp;print(num)
+                    <br>
+                </p>
+                <h3 class="h3">Decorators</h3>
+                <p class="p2">if we want to take a function as an argument to another function the we use decorators , we will study further about them .<br>
+                </p> <br>
+                <h3 class="h3">Object oriented programming</h3>
+                <img src="../views/class1.jpg" alt="classes and object">
+                <h3 class="h3">constructors</h3>
+                <img src="../views/class2.jpg" alt="constructors">
+                <h3 class="h3">static methords</h3>
+                <p class="p2">static methord do not take self or cls as argument --> <br> &nbsp;&nbsp;&nbsp;&nbsp;@staticmethord <br> &nbsp;&nbsp;&nbsp;&nbsp;def cwa(string): <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("hey"+string) <br>
+                </p>
+                <h3 class="h3">Inheritence</h3>
+                <img src="../views/inherit.jpg" alt="Inheritence">
+                <h3 class="h3">Setters and getters</h3>
+                <img src="../views/property.jpg" alt="property decorators">
+                <p class="p2">some functions to inspect object : <br> type() --> give the type of object <br> dir() --> give a list of function you can use with object <br> Example --> <br> print(dir(cwa)) --> give various functions
+                </p>
+                <h3 class="h3">Generator & Iterators</h3>
+                <p class="p2">Generators</p>
+                <img src="../views/gen.jpg" alt="Generators">
+                <p class="p2">Iterators</p>
+                <img src="../views/iter.jpg" alt="Iterators">
+                <h3 class="h3">List , dictionary ,Sets comprehensions</h3>
+                <p class="p2">comprehensions means simplifing.</p>
+                <img src="../views/comp.jpg" alt="comprehensions">
+                <h3 class="h3">Using else with for loop</h3>
+                <p class="p2">l=["a","b","c"] <br> &nbsp;&nbsp;for item in l: <br> &nbsp;&nbsp;&nbsp;print(item) <br> &nbsp;&nbsp;else: <br>&nbsp;&nbsp;&nbsp;print("ended")</p>
+                <p class="p2">Return --> <br> <br> a <br> b <br> c <br> ended</p>
+                <h class="h3">To sleep </h>
+                <p class="p2">&nbsp;&nbsp;import time <br> &nbsp;&nbsp;time.sleep(1) --> sleep for one second</p>
+                <h class="h3">OS Module</h>
+                <p class="p2">To get current directory --> <br>&nbsp;&nbsp;import os <br>&nbsp;&nbsp;print(os.getcwd())</p>
+                <p class="p2">To change directory --> <br>&nbsp;&nbsp;import os <br>&nbsp;&nbsp;os.chdir("c://"))</p>
+                <p class="p2">To make folder --> <br>&nbsp;&nbsp;import os <br>&nbsp;&nbsp;os.mkdir("cwa")</p>
+                <p class="p2">To make many folder --> <br>&nbsp;&nbsp;import os <br>&nbsp;&nbsp;os.makedirs("cwa1/cwa2")</p>
+                <h3 class="h3">is and ==</h3>
+                <p class="p2">== shows value equality</p>
+                <p class="p2">is shows reference equality</p>
+                <h3 class="h3">cx_freeze</h3>
+                <p class="p2">This is the module to convert .py inyo exe</p>
+                <img class="cx" src="../views/cx.jpg" alt="cx_freeze">
+                <p class="p2">First off all open a folder named setup.py to same directory where your .py file is held and then write following code to setup.py</p>
+                <img src="../views/cx-f.jpg" alt="">
+                <p class="p2">after this <br> open cmd to the directory where all the files are held,and type <br> python setup.py build</p>
+                <h3 style="display: flex; justify-content: center; align-items: center; color: blueviolet;">thanks</h3>
+        </div>
+        <div id="html">
+            <h1 class="h2">HTML</h1>
+            <hr>
+            <p class="p1"> Html is a hyper text markup language , it is used to build websites . me too make this website in html.</p>
+            <h3 class="h3">basic structure</h3>
+            <p class="p2"></p>
+            <img src="../views/html-s.jpg" alt="">
+            <h3 class="h3">headings</h3>
+            <p class="p2">
+                <h1>heading1</h1>
+            </p>
+            <p class="p2">
+                <h2>heading2</h2>
+            </p>
+            <p class="p2">
+                <h3>heading3</h3>
+            </p>
+            <p class="p2">
+                <h4>heading4</h4>
+            </p>
+            <p class="p2">
+                <h5>heading5</h5>
+            </p>
+            <h3 class="h3">paragrah , span , line break , line , anchor tag ,etc </h3>
+            <img src="../views/html-c.jpg" alt="">
+            <h3 class="h3">to link css an js files</h3>
+            <img src="../views/html-l.jpg" alt="">
+            <h3 class="h3">lists</h3>
+            <p class="p2">ordered list</p>
+            <p class="p2">un odered list</p>
+            <img src="../views/html-ou.jpg" alt="">
+            <h3 class="h3">Forms</h3>
+            <img src="../views/html-f.jpg" alt="">
+            <h3 class="h3">button</h3>
+            <img src="../views/html-b.jpg" alt="">
+            <h3 class="h3">how to print some items in html</h3>
+            <img src="../views/html-i.jpg" alt="">
+            <h3 class="h3">Summary and detail</h3>
+            <img src="../views/html-sd.jpg" alt="">
+            <p class="p2">
+                result-->
+            </p>
+            <img src="../views/html-rsd.jpg" alt="">
+        </div>
+        <div id="js">
+            <h1 class="h2">Java script</h1>
+            <hr>
+            <p class="p2">we write java script in strip tag in body</p>
+            <h3 class="h3">data types</h3>
+            <p class="p2">we use var or let to define variales.</p>
+            <p class="p2">var a = 78; <br> let a = 78; , both are same</p>
+            <h3 class="h3">f-strings</h3>
+            <p class="p2">`the content ${variable or values} `</p>
+            <h3 class="h3">String</h3>
+            <p class="p2">we ca make string by using "" or '' </p>
+            <h4>some string function ---</h4>
+            <p class="p2">var str = "this is cwa" </p>
+            <p class="p2">var value = str.indexOf(is) --> first occurence </p>
+            <p class="p2">var value = str.lastIndexOf(is) --> last occurence</p>
+            <p class="p2">var value = str.replace('is','are') --> to replace</p>
+            <h3 class="h3">if and else statements</h3>
+            <p class="p2">if (a>1){ <br> &nbsp;console.log("good day") <br> } <br> else{ <br> &nbsp; console.log("bad day") <br>} </p>
+            <h3 class="h3">switch case</h3>
+            <p class="p2">let a=2</p>
+            <p class="p2">switch(a){ <br> &nbsp; case 1: <br>&nbsp;&nbsp;&nbsp;console.log("yes") <br> &nbsp;&nbsp;break; <br> &nbsp;case 2: <br> &nbsp;&nbsp;console.log("no") <br>&nbsp;&nbsp;break;<br>}</p>
+            <h3 class="h3">arrays</h3>
+            <p class="p2">arrays are the block of memory used to store data.</p>
+            <p class="p2">let name = [1,2,3,'hey'] <br> &nbsp;&nbsp; console.log(name[2]) -- result - 2 <br> name.push("hey") -- will add hey to array</p>
+            <h3 class="h3">functions</h3>
+            <p class="p2">function name(argument){ <br> &nbsp;&nbsp; console.log(argument) <br> } <br> name(cwa) </p>
+            <p class="p2"><br><br>we can also use alert in place of console.log but alert will display message as pop up menu and console.log will shows the message in console menu of the browser .
+            </p>
+            <h3 class="h3">loops</h3>
+            <p class="p2">let i=0 ; <br> for (i=0 ; i
+                <3 ; i++){ <br>&nbsp;&nbsp;console.log(i); <br> &nbsp; } </p>
+            <h3 class="h3">object</h3>
+            <p class="p2">let emp={<br> &nbsp;&nbsp;name:"cwa" <br> &nbsp;&nbsp; salary:300 <br>} <br> for (key in emp){ <br> &nbsp;&nbsp; console.log(emp[key]) <br>&nbsp;}
+            </p>
+            <h3 class="h3">while loop</h3>
+            <p class="p2"><b> let i=0 <br> while (i
+            <5){ <br> &nbsp;&nbsp;console.log("cwa") <br> &nbsp;&nbsp;i++ <br>}</b></p>
+            <h3 class="h3">Events</h3>
+            <img src="../views/js-e.jpg" alt="">
+            <h3 class="h3">arrow functions</h3>
+            <p class="p2">this is the easy and anther way to make functions </p>
+            <p class="p2">let function_name = (argument)=>{ <br> &nbsp;&nbsp; console.log("arrow func") <br> }</p>
+
+        </div>
+        <div id="css">
+            <h1 class="h2">CSS</h1>
+            <hr>
+            <p class="p2">we use css to give style to our html website </p>
+            <p class="p2">we write css iside style tag inside head and to identify , we give class and id to different selectors</p>
+            <p class="p2"> many selectors can have same class but not same id</p>
+            <h3 class="h3">some designs we use in css</h3>
+            <img src="../views/css-s.jpg" alt="">
+            <h3 class="h3">How to add background to page</h3>
+            <p class="p2">How to add background to page in style tag</p>
+            <img src="../views/css-bs.jpg" alt="">
+            <p class="p2">How to add background to page in body tag</p>
+            <img src="../views/css-bb.jpg" alt="">
+            <h3 class="h3">box</h3>
+            <img src="../views/css-b.jpg" alt="">
+            <h3 class="h3">Alignment</h3>
+            <p class="p2">text-align:center;</p>
+            <p class="p2">justify-content:center;</p>
+            <p class="p2">justify-content:space-around;</p>
+            <p class="p2">justify-content:space-evenly;</p>
+            <p class="p2">justify-content:space-between;</p>
+            <h3 class="h3">float</h3>
+            <p class="p2">we use float to list the direction of text</p>
+            <p class="p2">float:right;</p>
+            <p class="p2">float:left;</p>
+            <h3 class="h3">list style and text decoration</h3>
+            <p class="p2">
+                we use list style to manage the style to number a list <br> list-style:none;
+            </p>
+            <p class="p2">
+                we use text decoration to manage the line at the bottom of text of anchor tag <br> text-decoration:none;
+            </p>
+            <h3 class="h3">Position</h3>
+            <p class="p2">position:absolute; ---to show thing</p>
+            <p class="p2">position:relative; ---to unshow thing</p>
+            <p class="p2">position:stiky; ---to show thing when scroll also</p>
+            <h3 class="h3">Flex box</h3>
+            <p class="p2">it is used by most of web developers.</p>
+            <img src="../views/css-f.jpg" alt="" class="">
+            <p class="p2">result--></p>
+            <img src="../views/css-rf.jpg" alt="">
+            <h3 class="h3">Hover</h3>
+            <p class="p2">hover means when mouse is moved over it </p>
+            <p class="p2">examle--></p>
+            <p class="p2">&nbsp;&nbsp;#p1:hover{color:red;}</p>
+            <h3 class="h3">Animination</h3>
+            <img src="../views/css-a.jpg" alt="">
+            <h3 class="h3">Grid</h3>
+            <p class="p2">display:grid;</p>
+            <img src="../views/grid-1.jpg" alt="">
+            <img src="../views/grid-2.jpg" alt="">
+            <img src="../views/grid-3.jpg" alt="">
+
+        </div>
+        <div id="pygame">
+            <h1 class="h2">Pygame</h1>
+            <hr>
+            <h3 class="h3">Getting started</h3>
+            <p class="p2">Start pygame and draw some lines <br> The best way to understand how pygame works is to start it up and draw something. Open the Python Command Shell in IDLE to get started. Before we can use pygame in a program, we need to import it; enter
+                the statement below and press Enter: <br> >>> import pygame <br> Once we’ve imported the pygame module, we can start using the functions and classes it contains. The pygame framework needs to be set up before you can use it to display
+                the items in your game. A game program does this by calling the init function in the pygame module, as shown here: <br> >>> pygame.init() <br> When you press Enter, the init function sets up the different pygame elements, each of which
+                performs a specific task when the game is running. Elements read user input, make sounds, and so on. The init function returns a tuple that tells you how many elements have been successfully initialized, and how many have failed to initialize.
+                If an element fails to initialize, pygame might not have been installed correctly. However, most games ignore this value and assume that all is well. <br> >>> pygame.init() <br> (6, 0) <br> The display above shows that six modules have
+                been set up correctly and that none have failed to initialize. If you see any failures—in other words, if the second value in the tuple is any value other than zero—you should make sure that pygame has been properly installed. Next, we
+                need to create a drawing surface. A drawing surface has a specific size, which is set when we create it. The size is given in pixels (a pixel is the size of a dot on the display). The more pixels you have, the better quality the display.
+                You also find pixel dimensions when talking about camera and video screen resolution. We’ll use a screen size of 800 pixels wide and 600 pixels high. We can use a tuple to create a surface as follows: <br> >>> size = (800, 600) <br> Remember
+                that a tuple is a way of grouping a number of items. You can find out more about them in Chapter 8. Once we have the tuple that describes the size of the game screen, we can use this value as an argument to the function that creates a
+                pygame drawing surface. <br> >>> surface = pygame.display.set_mode(size) <br> This statement creates the drawing surface, sets the variable surface to refer to it, and then displays the surface on the screen. You should see the window
+                below appear on your screen. <br>
+            </p>
+            <img src="../views/pygame.jpg" alt="pygame">
+            <p class="p2">You can change the title of the drawing window using the following function: <br> >>> pygame.display.set_caption('An awesome game by Rob') <br> This function changes the title of the window as shown below .</p>
+            <img src="../views/caption.jpg" alt="caption">
+            <hr>
+            <h3 class="h3">Basic structure</h3>
+            <img src="../views/basic-str.jpg" alt="basics">
+            <h3 class="h3">Coordinates</h3>
+            <img src="../views/coord.jpg" alt="coordinates">
+            <hr>
+            <h3 class="h3">Exercise</h3>
+            <img src="../views/pattern.jpg" alt="">
+            <h4>------result-------</h4>
+            <img src="../views/exercise.jpg" alt="">
+            <h3 class="h3">Loading image to pygame</h3>
+            <p class="p2">&nbsp;&nbsp;image=pygame.image.load("image path") <br> &nbsp;&nbsp;pos=(34,67) <br> &nbsp;&nbsp;surface.blit(image,pos)
+            </p>
+            <h3 class="h3">Moving image</h3>
+            <img src="../views/move.jpg" alt="">
+            <h3 class="h3">Adding sounds</h3>
+            <p class="p2"> sound=pygame.mixer.sound("full path") <br>sound.play() </p>
+            <h3 class="h3">Keyboard events</h3>
+            <img src="../views/key.jpg" alt="Keyboard events">
+            <h3 class="h3">Keys</h3>
+            <p class="p4">K_KP_MINUS keypad minus <br> K_KP_PLUS keypad plus <br> K_KP_ENTER keypad enter <br> K_KP_ENTER keypad enter <br> K_KP_EQUALS keypad equals <br> K_UP up arrow <br> K_DOWN down arrow <br> K_RIGHT right arrow <br> K_LEFT left arrow <br> K_INSERT
+                insert
+                <br> K_HOME home<br> K_END end<br> K_PAGEUP page up<br> K_PAGEDOWN page down<br> K_F1 F1<br> K_F2 F2<br> K_F3 F3<br> K_F4 F4<br> K_F5 F5<br> K_F6 F6<br> K_F7 F7<br> K_F8 F8<br> K_F9 F9<br> K_F10 F10<br> K_F11 F11<br> K_F12 F12<br> K_F13
+                F13
+                <br> K_F14 F14
+                <br> K_F15 F15<br> K_NUMLOCK numlock<br> K_CAPSLOCK capslock<br> K_SCROLLOCK scrollock<br> K_RSHIFT right shift<br> K_LSHIFT left shift<br> K_RCTRL right ctrl<br> K_LCTRL left ctrl<br> K_RALT right alt<br> K_LALT left alt<br> K_RMETA right
+                meta
+                <br> K_LMETA left meta<br> K_LSUPER left windows key<br> K_RSUPER right windows key<br> K_MODE mode shift<br> K_HELP help<br> K_PRINT print screen<br> K_SYSREQ sysrq<br> K_BREAK break<br> K_MENU menu<br> K_POWER power<br> K_EURO euro<br>
+
+            </p>
+            <p class="p4">K_BACKSPACE&nbsp; \b&nbsp; backspace <br> K_TAB&nbsp; \t&nbsp; tab<br> K_CLEAR&nbsp; clear<br> K_RETURN&nbsp; \r&nbsp; return<br> K_PAUSE &nbsp;pause<br> K_ESCAPE &nbsp;^[&nbsp; escape<br> K_SPACE &nbsp;space<br> K_EXCLAIM&nbsp; !&nbsp; exclaim<br>                K_QUOTEDBL&nbsp; "&nbsp; quotedbl<br> K_HASH &nbsp;#&nbsp; hash<br> K_DOLLAR &nbsp;$&nbsp; dollar<br> K_AMPERSAND &nbsp;&&nbsp; ampersand<br> K_QUOTE&nbsp; quote<br> K_LEFTPAREN&nbsp; (&nbsp; left parenthesis<br> K_RIGHTPAREN&nbsp; )&nbsp;
+                right parenthesis
+                <br> K_ASTERISK&nbsp; *&nbsp; asterisk<br> K_PLUS &nbsp;+&nbsp; plus sign<br> K_COMMA &nbsp;,&nbsp;comma<br> K_MINUS&nbsp; - &nbsp;minus sign<br> K_PERIOD&nbsp; . &nbsp;period<br> K_SLASH &nbsp; / &nbsp; forward slash<br>
+            </p>
+            <h3 class="h3"> Display Text</h3>
+            <p class="p2">font = pygame.font.Font(None, 60) <br> text = font.render('hello world', True, (255,0,0)) <br> surface.blit(text, (0,0))</p>
+            <img src="../views/text.jpg" alt="text">
+            <p class="p2">after writting above code press up arrow ad see ,</p>
+            <img src="../views/text-r.jpg" alt="result">
+            <h3 style="display: flex; justify-content: center; align-items: center; color: blueviolet;">thanks</h3>
+        </div>
+        <div id="downloadlinks">
+            <h3 class="h2">Download links for mostly used programming stuff </h3>
+            <hr>
+            <div id="dow">
+                <ol>
+                    <li class="li"><a href="https://python.org">Python</a></li>
+                    <li class="li"><a href="">minGW </a></li>
+                    <li class="li"><a href="">jdk </a></li>
+                    <li class="li"><a href="">jre</a></li>
+                    <li class="li"><a href="">xampp</a></li>
+                    <li class="li"><a href="">mongoDB</a></li>
+                    <li class="li"><a href="">node js</a></li>
+                </ol>
+
+            </div>
+        </div>
+        <div id="contact">
+            <div class="divcontact">
+                <h1 class="h2">Contact Us</h1>
+                <hr>
+
+                <div id="label">
+
+                    <!--Add few elements to the form-->
+
+                    <div>
+                        <h3>Name</h3>
+                        <input type="text" id="txtName" />
+                    </div>
+                    <div>
+                        <h3>Phone</h3>
+                        <input type="text" id="txtAge" />
+                    </div>
+                    <div>
+                        <h3>Password</h3>
+                        <input type="text" id="txtEmail" />
+                    </div>
+                    <div>
+                        <select id="selCountry">
+                    <option selected value=""> country</option>
+                    <option value="India">India</option>
+                    <option value="Japan">Japan</option>
+                    <option value="USA">USA</option>
+                    <option value="USA">Other</option>
+                </select>
+                    </div>
+                    <div>
+                        <h3>Write the message</h3>
+                        <textarea id="msg" name="msg" style="height:100px"></textarea>
+                    </div>
+
+                    <!--Add to button to save the data.-->
+                    <div>
+                        <input type="button" id="bt" value="Save" onclick="saveFile()" />
+                    </div>
+                </div>
+</body>
+<script>
+    let saveFile = () => {
+
+        // Get the data from each element on the form.
+        const name = document.getElementById('txtName');
+        const age = document.getElementById('txtAge');
+        const email = document.getElementById('txtEmail');
+        const country = document.getElementById('selCountry');
+        const msg = document.getElementById('msg');
+        let data =
+            '\r Name: ' + name.value + ' \r\n ' +
+            'Age: ' + age.value + ' \r\n ' +
+            'Email: ' + email.value + ' \r\n ' +
+            'Country: ' + country.value + ' \r\n ' +
+            'Message: ' + msg.value;
+
+        // Convert the text to BLOB.
+        const textToBLOB = new Blob([data], {
+            type: 'text/plain'
+        });
+        const sFileName = 'formData.txt'; // The file to save the data.
+
+        let newLink = document.createElement("a");
+        newLink.download = sFileName;
+
+        if (window.webkitURL != null) {
+            newLink.href = window.webkitURL.createObjectURL(textToBLOB);
+        } else {
+            newLink.href = window.URL.createObjectURL(textToBLOB);
+            newLink.style.display = "none";
+            document.body.appendChild(newLink);
+        }
+
+        newLink.click();
+    }
+</script>
+</div>
+</div>
+<div>
+    <h3 class="h2">Quick links</h3>
+    <ol id="link">
+        <li><a href="#">Home</a></li>
+        <li><a href="#content">Content</a></li>
+        <li><a href="#downloadlinks">Downoad links</a></li>
+
+        <li><a href="#contact">Contact Us</a></li>
+    </ol>
+</div>
+<div>
+    <h3 class="h2">follow Us </h3>
+    <div>
+        <ol id="follow">
+            <li class="ins">Instagram</li>
+            <li class="ins">facebook</li>
+            <li class="ins">Git</li>
+        </ol>
+    </div>
+</div>
+<footer>
+    <h4 id="h4" style="display:flex; justify-content: center; text-align: center; background-color: rgb(73, 78, 82); color: snow;">Copyright &copy; WWW.CodeWithAtharv.com All right reserved!</h4>
+</footer>
+
+</div>
